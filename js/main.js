@@ -20,4 +20,17 @@ console.log(age);
 
 // ! ELABORAZIONE DATI
 
+// Definisco il prezzo base per chilometro, espresso in €
+const pricePerKm = 0.21;
+
+// Calcolo il prezzo totale senza sconto
+let totalPrice = km * pricePerKm;
+console.log(totalPrice);
+
+// Controllo l'età del passeggero per applicare eventuali sconti
+
 // ! OUTPUT
+
+// Arrotondo il prezzo a due decimali
+
+// Stampo il prezzo finale del biglietto

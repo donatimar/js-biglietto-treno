@@ -12,11 +12,11 @@
 
 // Chiedo all'utente il numero di chilometri che vuole percorrere
 let km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
-console.log(km);
+console.log(`Chilometri inseriti: ${km}`);
 
 // Chiedo all'utente l'età del passeggero
 let age = parseInt(prompt("Qual è l'età del passeggero?"));
-console.log(age);
+console.log(`Età inserita: ${age}`);
 
 // ! ELABORAZIONE DATI
 
@@ -25,9 +25,24 @@ const pricePerKm = 0.21;
 
 // Calcolo il prezzo totale senza sconto
 let totalPrice = km * pricePerKm;
-console.log(totalPrice);
+console.log(`Prezzo totale non scontato: €${totalPrice.toFixed(2)}`);
 
 // Controllo l'età del passeggero per applicare eventuali sconti
+if (age < 18) {
+  // Applico uno sconto del 20% per i minorenni
+  totalPrice *= 0.8;
+  console.log(
+    `Prezzo con sconto del 20% per under 18: €${totalPrice.toFixed(2)}`
+  );
+} else if (age > 65) {
+  // Applico uno sconto del 40% per gli over 65
+  totalPrice *= 0.6;
+  console.log(
+    `Prezzo con sconto del 40% per over 65: €${totalPrice.toFixed(2)}`
+  );
+} else {
+  console.log("Nessuno sconto applicato");
+}
 
 // ! OUTPUT
 

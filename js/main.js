@@ -37,16 +37,20 @@ let totalPrice = km * pricePerKm;
 console.log(`Prezzo totale non scontato: €${totalPrice}`);
 
 // Controllo l'età del passeggero per applicare eventuali sconti
+let discountMessage = "Nessuno sconto applicato.";
 if (age < 18) {
   // Applico uno sconto del 20% per i minorenni
   totalPrice *= 0.8;
+  discountMessage = "Hai diritto ad uno sconto del 20% per minori di 18 anni";
   console.log(`Prezzo con sconto del 20% per under 18: €${totalPrice}`);
 } else if (age > 65) {
   // Applico uno sconto del 40% per gli over 65
   totalPrice *= 0.6;
+  discountMessage = "Hai diritto ad uno sconto del 40% per over 65 anni";
   console.log(`Prezzo con sconto del 40% per over 65: €${totalPrice}`);
 } else {
   // Prezzo senza sconti applicati
+  discountMessage = "Nessuno sconto applicato";
   console.log("Nessuno sconto applicato");
 }
 
@@ -55,3 +59,9 @@ if (age < 18) {
 // Arrotondo il prezzo a due decimali e lo stampo
 totalPrice = totalPrice.toFixed(2);
 console.log(`Prezzo finale arrotondato: €${totalPrice}`);
+
+alert(`Riepilogo del viaggio:
+  - Chilometri percorsi: ${km} km
+  - Età del passeggero: ${age} anni
+  - ${discountMessage}
+  - Prezzo finale: €${totalPrice}`);

@@ -37,7 +37,7 @@ let totalPrice = km * pricePerKm;
 console.log(`Prezzo totale non scontato: €${totalPrice}`);
 
 // Controllo l'età del passeggero per applicare eventuali sconti
-let discountMessage = "Nessuno sconto applicato.";
+let discountMessage = "";
 if (age < 18) {
   // Applico uno sconto del 20% per i minorenni
   totalPrice *= 0.8;

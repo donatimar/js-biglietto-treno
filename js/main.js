@@ -13,10 +13,18 @@ Il programma dovrà chiedere all'utente il numero di chilometri che vuole percor
 
 // Chiedo all'utente il numero di chilometri che vuole percorrere
 let km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
+if (isNaN(km) || km <= 0) {
+  alert("Per favore, inserisci un numero intero positivo per i chilometri.");
+  km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
+}
 console.log(`Chilometri inseriti: ${km}`);
 
 // Chiedo all'utente l'età del passeggero
 let age = parseInt(prompt("Qual è l'età del passeggero?"));
+if (isNaN(age) || age <= 0) {
+  alert("Per favore, inserisci un numero intero positivo per l'età.");
+  age = parseInt(prompt("Qual è l'età del passeggero?"));
+}
 console.log(`Età inserita: ${age}`);
 
 // ! ELABORAZIONE DATI
